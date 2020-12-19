@@ -7,14 +7,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * member用户读取
+ * @description：
+ * @author： dingyawu
+ * @date： created in 22:00 2020-12-15
+ * @history:
+ */
 @RestController
+@RequestMapping("/member")
 public class TestController {
 
 	@Autowired
     MemeberMapper memeberMapper;
-	
+
+	/**
+	 * 根据id查询新用户
+	 * @param id   用户id
+	 * @return
+	 */
 	@RequestMapping( value = "/test", method = RequestMethod.GET)
-	public Member queryMember() {
-		return memeberMapper.queryMemberByid(1);
+	public Member queryMember(Integer id) {
+		return memeberMapper.queryMemberByid(id);
 	}
 }

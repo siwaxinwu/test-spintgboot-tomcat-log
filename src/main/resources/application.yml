@@ -12,7 +12,7 @@ server:
       file-date-format: yyyyMMdd
       #生成的日志文件内容格式也是可以调整的 %h:请求的客户端ip %l：用户的身份，没有用-代替
       #%u：用户名，没有用-代替，%u:请求时间， %r：请求地址  ， %s：响应的状态码 ，%b：响应数据的大小
-      pattern: %h %l %u %t \"%r\" %s %b
+      pattern: '%h %l %u %t \"%r\" %s %b'
     #生成的访问日志将在该目录下
     basedir: my-tomcat
 #服务器内部日志开启

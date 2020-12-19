@@ -15,3 +15,7 @@ mybatis.mapper-locations=classpath*:/mapper/**/*.xml
 @MapperScan 和@Mapper 这两个注解千万不要重复使用。
 
 #在application.yml中如何配置开启springboot内置tomcat服务器访问日志和服务器内部日志
+#项目中接入JApiDocs自动生成接口文档
+这种生成接口文档的格式结合hibernate校验使用
+
+

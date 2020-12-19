@@ -2,14 +2,24 @@ package com.roy.bean;
 
 
 
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.util.Date;
 
-
+/**
+ * member实体类
+ */
 public class Member {
 
+	/** id*/
+	@NotNull(message = "id不能爲空")
     private Long id;
 
-    private String memberName;
+	/**
+	 * 成员名字
+	 */
+	private String memberName;
 
     /**
      * 电话
@@ -56,8 +66,14 @@ public class Member {
      */
     private String signature;
 
-    private Long creatId;
+	/**
+	 * 创建id
+	 */
+	private Long creatId;
 
+	/**
+	 * 删除标识
+	 */
     private Integer deleteState;
 
     public Long getId() {
