@@ -1,0 +1,51 @@
+server:
+  port: 8083
+  #开启访问日志，默认的日志位置在项目运行的临时目录中，默认生成的日志格式 access_log.2020-12-10.log
+  tomcat:
+    accesslog:
+      enabled: true
+      #生成日志文件名的前缀，默认是access_log
+      prefix: roy_log
+      #生成的日志文件后缀
+      suffix: .log
+      #日志文件名中的日期格式
+      file-date-format: yyyyMMdd
+      #生成的日志文件内容格式也是可以调整的 %h:请求的客户端ip %l：用户的身份，没有用-代替
+      #%u：用户名，没有用-代替，%u:请求时间， %r：请求地址  ， %s：响应的状态码 ，%b：响应数据的大小
+      pattern: %h %l %u %t \"%r\" %s %b
+    #生成的访问日志将在该目录下
+    basedir: my-tomcat
+#服务器内部日志开启
+logging:
+  level:
+    org:
+      apache:
+        tomcat: debug
+        catalina: debug
+
+
+
+
+#  context-path: /web
+
+
+spring:
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource #Druid
+      driver-class-name: com.mysql.cj.jdbc.Driver #mysql
+      url: jdbc:mysql://192.168.159.130:3306/commonMapper?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true&nullCatalogMeansCurrent=true
+      username: root
+      password: 123456
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 30000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
